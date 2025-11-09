@@ -37,7 +37,7 @@ void moveTo(float x, float y) {
 
   // Safety check for unreachable positions.
   if (cos_theta2 < -1 || cos_theta2 > 1) {
-    Serial.println("Target unreachable!");
+    Serial.println("Target Unreachable!");
     return;
   }
 
