@@ -2,7 +2,7 @@
 #include <Servo.h>
 #include <math.h>
 
-// Servos:
+// Servo Objects:
 Servo baseServo;
 Servo shoulderServo;
 Servo elbowServo;
@@ -10,23 +10,23 @@ Servo wristPitchServo;
 Servo wristRotServo;
 Servo gripperServo;
 
-// Arm lengths:
-const float L1 = 10.0;  // Shoulder to elbow
-const float L2 = 7.0;   // Elbow to wrist
-const float L3 = 7.0;   // Wrist to gripper
+// Arm Link Lengths (cm):
+const float L1 = 10.0;  // Shoulder to Elbow Length.
+const float L2 = 7.0;   // Elbow to Wrist Length.
+const float L3 = 7.0;   // Wrist to Gripper Length.
 
-// Gripper positions:
+// Gripper Servo Positions:
 const int GRIPPER_OPEN = 90;
 const int GRIPPER_CLOSE = 30;
 
-// Pick and place coordinates:
+// Coordinates for pick and place points.
 float x_pick = 8.0, y_pick = 5.0, z_pick = 5.0;
 float x_place = 4.0, y_place = 10.0, z_place = 8.0;
 
 void setup() {
   Serial.begin(9600);
 
-  // Attach servos:
+  // Attach servos to appropriate pins.
   baseServo.attach(9);
   shoulderServo.attach(10);
   elbowServo.attach(11);
@@ -34,26 +34,29 @@ void setup() {
   wristRotServo.attach(5);
   gripperServo.attach(3);
 
-  Serial.println("Starting pick-and-place sequence...");
-
-  pickAndPlace(x_pick, y_pick, z_pick, x_place, y_place, z_place);
+  Serial.println("Starting pick and place sequence...");
 }
 
 void loop() {
-  // No repeated actions needed.
+  // Run the pick and place sequence.
+  pickAndPlace(x_pick, y_pick, z_pick, x_place, y_place, z_place);
+  Serial.println("Pick and place sequence complete! Waiting before repeating...");
+  delay(3000); // Wait 3 seconds before repeating.
 }
 
+// Move the arm to the given (x, y, z) coordinate.
 void moveTo(float x, float y, float z) {
-  // Base rotation:
+  // Calculate Base Rotation:
   float thetaBase = atan2(y, x);
   baseServo.write(degrees(thetaBase));
 
-  // Project target into the plane of the shoulder/elbow.
-  float r = sqrt(x*x + y*y);
-  float zEff = z;
+  // Project target point onto the vertical plane.
+  float r = sqrt(x * x + y * y); // Horizontal Distance.
+  float zEff = z;                // Vertical Height.
 
-  // Calculate shoulder and elbow using planar IK.
-  float D = (r*r + zEff*zEff - L1*L1 - L2*L2) / (2 * L1 * L2);
+  // Inverse kinematics for shoulder and elbow.
+  float D = (r * r + zEff * zEff - L1 * L1 - L2 * L2) / (2 * L1 * L2);
+
   if (D < -1 || D > 1) {
     Serial.println("Target Unreachable!");
     return;
@@ -62,43 +65,46 @@ void moveTo(float x, float y, float z) {
   float thetaElbow = acos(D);
   float thetaShoulder = atan2(zEff, r) - atan2(L2 * sin(thetaElbow), L1 + L2 * cos(thetaElbow));
 
-  // Convert to degrees:
+  // Convert to Degrees:
   float shoulderAngle = degrees(thetaShoulder);
   float elbowAngle = degrees(thetaElbow);
 
-  // For simplicity, keep wrist horizontal.
+  // Keep wrist roughly horizontal.
   float wristPitchAngle = -(shoulderAngle + elbowAngle);
-  float wristRotAngle = 90;
+  float wristRotAngle = 90; // Fixed for simplicity.
 
-  // Write servo positions:
+  // Move Servos:
   shoulderServo.write(shoulderAngle);
   elbowServo.write(elbowAngle);
   wristPitchServo.write(wristPitchAngle);
   wristRotServo.write(wristRotAngle);
 
-  Serial.print("Base: "); Serial.print(degrees(thetaBase));
+  // Print joint details for debugging.
+  Serial.print("\nBase: "); Serial.print(degrees(thetaBase));
   Serial.print(" | Shoulder: "); Serial.print(shoulderAngle);
   Serial.print(" | Elbow: "); Serial.print(elbowAngle);
   Serial.print(" | WristPitch: "); Serial.print(wristPitchAngle);
-  Serial.print(" | WristRot: "); Serial.println(wristRotAngle);
-
-  delay(1000);
+  Serial.println(String(" | WristRot: ") + wristRotAngle + "\n");
+  delay(1500); // Allow movement time.
 }
 
+// Perform the pick and place sequence.
 void pickAndPlace(float x1, float y1, float z1, float x2, float y2, float z2) {
-  Serial.println("Moving to pick location...");
+  Serial.println("\nMoving to pick location...");
   moveTo(x1, y1, z1);
 
   Serial.println("Closing gripper...");
   gripperServo.write(GRIPPER_CLOSE);
   delay(1000);
 
-  Serial.println("Moving to place location...");
+  Serial.println("\nMoving to place location...");
   moveTo(x2, y2, z2);
 
   Serial.println("Opening gripper...");
   gripperServo.write(GRIPPER_OPEN);
   delay(1000);
 
-  Serial.println("Pick-and-place complete!");
+  Serial.println("\nReturning to home position...");
+  moveTo(6.0, 0.0, 10.0); // Example home coordinates.
+  delay(1000);
 }
