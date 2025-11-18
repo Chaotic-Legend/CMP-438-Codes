@@ -7,6 +7,14 @@ This project is a Bluetooth-controlled robot car built using an Arduino Uno, L29
 
 ---
 
+## Simulation
+View the TinkerCAD circuit here:  
+
+---
+
+## Code
+View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project%3A%20BluetoothCar.ino
+
 ## Features
 - Wireless Bluetooth control using HC-05
 - Moves forward, backward, left, right, and stops
