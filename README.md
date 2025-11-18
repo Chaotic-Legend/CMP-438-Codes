@@ -1,6 +1,6 @@
 # CMP-438-Codes
 The purpose of this repository is for my CMP 438 college class to save my Xacro and Arduino programs. https://lehman-undergraduate.catalog.cuny.edu/courses/0993131
-# Bluetooth-Controlled Car (CMP 438 – Communicating Robots)
+# Bluetooth-Controlled Car
 
 ## Overview
 This project is a Bluetooth-controlled robot car built using an Arduino Uno, L298N motor driver, and HC-05 Bluetooth module. A smartphone sends commands (F, B, L, R, S) through Bluetooth, and the robot responds with corresponding movement.
