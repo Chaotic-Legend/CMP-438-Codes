@@ -5,13 +5,6 @@ The purpose of this repository is for my CMP 438 college class to save my Xacro 
 ## Overview
 This project is a Bluetooth-controlled robot car built using an Arduino Uno, L298N motor driver, and HC-05 Bluetooth module. A smartphone sends commands (F, B, L, R, S) through Bluetooth, and the robot responds with corresponding movement.
 
-This repository contains:
-- Full Arduino source code
-- Wiring diagrams
-- Design documentation
-- Simulation link
-- Project report information
-
 ---
 
 ## Features
