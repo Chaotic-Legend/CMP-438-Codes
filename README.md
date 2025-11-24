@@ -11,7 +11,7 @@ This project is a Bluetooth-controlled robot car constructed using an Arduino Un
 ---
 
 ## Simulation
-View the TinkerCAD circuit here:  
+View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cmp-438-project-bluetooth-controlled-car?sharecode=ouXh349QThBm-k8ye4wscJ36WKpGQb2r2AGfotNXZYA
 
 ## Code
 View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project:%20Bluetooth-Controlled%20Car.ino
