@@ -1,4 +1,4 @@
-// CMP 438: Communicating Robots - Bluetooth Controlled Car - Isaac D. Hoyos
+// CMP 438: Communicating Robots - Bluetooth-Controlled Car - Isaac D. Hoyos
 
 // Motor driver pins
 int IN1 = 8;
