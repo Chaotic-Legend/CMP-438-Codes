@@ -1,12 +1,12 @@
 # CMP-438-Codes
-The purpose of this repository is for my CMP 438 college class to save my Xacro and Arduino programs. https://lehman-undergraduate.catalog.cuny.edu/courses/0993131
+The purpose of this repository is to store my Xacro and Arduino programs for my CMP 438 college class. https://lehman-undergraduate.catalog.cuny.edu/courses/0993131
 
 ---
 
 # Bluetooth-Controlled Car
 
 ## Overview
-This project is a Bluetooth-controlled robot car built using an Arduino Uno, L298N motor driver, and HC-05 Bluetooth module. A smartphone sends commands (F, B, L, R, S) through Bluetooth, and the robot responds with corresponding movement.
+This project is a Bluetooth-controlled robot car constructed using an Arduino Uno, an L298N motor driver, and an HC-05 Bluetooth module. A smartphone sends commands (F, B, L, R, S) through Bluetooth, and the robot responds with corresponding movement.
 
 ---
 
@@ -14,7 +14,7 @@ This project is a Bluetooth-controlled robot car built using an Arduino Uno, L29
 View the TinkerCAD circuit here:  
 
 ## Code
-View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project%3A%20BluetoothCar.ino
+View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project:%20Bluetooth-Controlled%20Car.ino
 
 ---
 
