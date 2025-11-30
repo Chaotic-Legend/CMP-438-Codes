@@ -14,23 +14,24 @@ View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes
 ---
 
 ## Features
-- Wireless Bluetooth control using HC-05
-- Moves forward, backward, left, right, and stops
-- Motor control using L298N driver
-- Compatible with Android Bluetooth Controller apps
-- TinkerCAD simulation included
+- The robot uses wireless Bluetooth control through an HC-05 module.
+- The system is fully compatible with Android Bluetooth controller apps, such as the Arduino Car Connect App.
+- Its motors are driven using an L298N motor driver module.
+- It is capable of moving forward, backward, turning left or right, and stopping on command.
+- A complete TinkerCAD simulation is included to demonstrate an example circuit and code.
 
 ---
 
-## Components Used
-- Arduino Uno  
-- L298N Motor Driver  
-- HC-05 Bluetooth Module  
-- Two DC motors  
-- Chassis + wheels  
-- Battery pack  
-- Jumper wires  
-- Voltage divider (1kΩ + 2kΩ)
+## Components Used 
+- 4x DC 3-6V Gearbox Motor Dual Shaft 
+- 1x L298N Motor Driver 
+- 1x Inland UNO Board (Arduino UNO Replica)
+- 1x 7.4v Li-Ion Battery 
+- 1x HC-05 Bluetooth Module 
+- 1x Blue LED
+- Chassis
+- Wheels  
+- Jumper Wires 
 
 ---
 
@@ -42,7 +43,6 @@ View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes
 | VCC | 5V |
 | GND | GND |
 | TX | RX (0) |
-| RX | TX (1, with voltage divider) |
 
 ### L298N Motor Driver
 | L298N Pin | Arduino Pin |
