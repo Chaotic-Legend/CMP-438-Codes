@@ -1,4 +1,4 @@
-# Bluetooth-Controlled Car
+# CMP 438 Project - Bluetooth-Controlled Car
 
 ## Overview
 This project is a Bluetooth-controlled robot car constructed using an Arduino Uno, an L298N motor driver, and an HC-05 Bluetooth module. A smartphone sends commands through Bluetooth, and the robot responds with corresponding movement.
