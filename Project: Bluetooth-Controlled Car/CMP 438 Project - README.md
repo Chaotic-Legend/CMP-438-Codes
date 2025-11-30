@@ -139,5 +139,4 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                                 ┌────────────────────┐
                                 │ Return to Waiting   │
                                 └────────────────────┘
-
 ---
