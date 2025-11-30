@@ -30,9 +30,9 @@ View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cm
 ---
 
 ## Features
-- The robot uses wireless Bluetooth control through an HC-05 module.
+- The robotic car uses wireless Bluetooth communication through an HC-05 module.
 - The system is fully compatible with Android Bluetooth controller apps, such as the Arduino Car Connect App.
-- Its motors are driven using an L298N motor driver module.
+- Its motors are driven using an L298N motor driver module to move the wheels of the vehicle.
 - It is capable of moving forward, backward, turning left or right, and stopping on command.
 - A complete TinkerCAD simulation is included to demonstrate an example circuit and code.
 
@@ -86,6 +86,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 | S | Stop |
 
 ## Flowchart
+Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
                  ┌────────────────────────┐
                  │      Start Program     │
                  └────────────┬───────────┘
