@@ -3,6 +3,12 @@
 ## Overview
 This project is a Bluetooth-controlled robot car constructed using an Arduino Uno, an L298N motor driver, and an HC-05 Bluetooth module. A smartphone sends commands through Bluetooth, and the robot responds with corresponding movement.
 
+- This directory folder contains the full Arduino source code for the project.
+- It includes all wiring diagrams required to assemble the circuit.
+- It provides complete design documentation explaining the system's structure.
+- It also contains a simulation link for testing the project virtually.
+- Finally, it includes the project report information for reference.
+
 ---
 
 ## Code
