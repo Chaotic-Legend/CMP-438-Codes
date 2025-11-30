@@ -86,7 +86,6 @@ The design diagrams and schematics included in the repository illustrate the ent
 | S | Stop |
 
 ## Flowchart
-Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
                  ┌────────────────────────┐
                  │      Start Program     │
                  └────────────┬───────────┘
