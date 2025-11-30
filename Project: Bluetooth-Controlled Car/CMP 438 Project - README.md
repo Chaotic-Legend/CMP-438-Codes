@@ -7,7 +7,11 @@
 - Date: December 2nd, 2025
 
 ## Overview
-This project is a Bluetooth-controlled robot car constructed using an Arduino Uno, an L298N motor driver, and an HC-05 Bluetooth module. A smartphone sends commands through Bluetooth, and the robot responds with corresponding movement.
+This project presents a fully operational Bluetooth-controlled robotic car designed and implemented for the CMP 438 Communicating Robots course. The robot uses an Arduino-compatible Inland Uno R3 MainBoard, four DC 3-6V Gearbox Motors, an L298N Motor Driver, a 7.4V Li-Ion Battery, an HC-05 Bluetooth Module, a Blue LED, and other components to enable remote control through an Android phone. By using the Arduino Car Connect App, the robot receives commands such as forward, backward, left, right, and stop, which are transmitted over Bluetooth and executed through precise motor control logic programmed in Arduino C++. The objective of the project is to design a functional, small-scale, mobile robotic vehicle that demonstrates wireless communication and embedded motor control through commands.
+
+All development tasks, including writing the Arduino code, creating the TinkerCAD simulation, preparing the GitHub repository, designing the diagrams and schematics, and writing the full project report, were completed by Isaac D. Hoyos. Roberto Morales was responsible for acquiring all hardware components, assembling the physical robotic car, wiring all components on the chassis, testing the uploaded Arduino code on the real robot, and capturing photos and a demonstration video of the final results.
+
+I used TinkerCAD to create a virtual model of the system, but the online simulator had limitations that prevented me from accurately simulating the real robotic vehicle. It does not support the HC-05 Bluetooth module, cannot simulate Bluetooth communication with an Android phone, and does not allow me to use more than two hobby gearmotors. For this reason, the TinkerCAD version uses keyboard input to demonstrate the concept, while the physical robot uses genuine Bluetooth communication with the necessary components.
 
 - This directory folder contains the full Arduino source code for the project.
 - It includes all wiring diagrams required to assemble the circuit.
@@ -34,19 +38,19 @@ View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cm
 
 ---
 
-## Components Used 
-- 4x DC 3-6V Gearbox Motor Dual Shaft 
-- 1x L298N Motor Driver 
-- 1x Inland Uno R3 MainBoard Arduino Compatible
-- 1x 7.4v Li-Ion Battery 
-- 1x HC-05 Bluetooth Module 
-- 1x Blue LED
+## Components Used
 - Chassis
 - Wheels  
 - Jumper Wires
+- 1x Blue LED
+- 1x L298N Motor Driver
+- 1x 7.4V Li-Ion Battery 
+- 1x HC-05 Bluetooth Module 
+- 4x DC 3-6V Gearbox Motor Dual Shaft 
+- 1x Inland Uno R3 MainBoard Arduino Compatible
 
 ## Component Assembly & Design Documentation
-The design diagrams included in the repository illustrate the full wiring layout of the motor driver, Bluetooth module, Arduino Uno, power distribution, and motor outputs. The assembly process began with mounting the four DC gearbox motors onto the chassis, installing the wheels, attaching the L298N motor driver, and positioning the Arduino Uno on the upper level of the platform. The HC-05 module was secured with jumper wires and oriented for optimal Bluetooth communication. All grounds were tied together across the battery pack, motor driver, and Arduino to ensure proper reference voltage. The diagrams in the repository visually guide each step, from power routing to directional motor control wiring.
+The design diagrams and schematics included in the repository illustrate the entire wiring layout of the motor driver, Bluetooth module, Arduino UNO, power distribution, and motor outputs. The assembly process began with mounting the four DC gearbox motors onto the chassis, installing the wheels, attaching the L298N motor driver, and positioning the Arduino UNO on the upper level of the platform. The HC-05 module was securely connected with jumper wires and positioned correctly to enable Bluetooth communication with the Android smartphone. All grounds were interconnected across the battery pack, motor driver, and Arduino UNO to ensure a proper reference voltage. The diagrams in the repository visually demonstrate each connected component, from power routing to directional motor control wiring.
 
 ---
 
