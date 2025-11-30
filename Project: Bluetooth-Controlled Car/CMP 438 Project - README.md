@@ -86,6 +86,8 @@ The design diagrams and schematics included in the repository illustrate the ent
 | S | Stop |
 
 ## Flowchart
+Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
+
                  ┌────────────────────────┐
                  │      Start Program     │
                  └────────────┬───────────┘
@@ -111,32 +113,31 @@ The design diagrams and schematics included in the repository illustrate the ent
                └────Loop────────▶ Match Command to Movement   │
                                  └─────────┬──────────────────┘
                                            │
-         ┌─────────────────────────────────┼─────────────────────────────┬───────────────────────┐
-         ▼                                 ▼                             ▼                       ▼
-┌─────────────────┐        ┌────────────────────┐        ┌────────────────────┐        ┌──────────────────┐
-│ Forward (F)      │        │ Backward (B)       │        │ Turn Left (L)      │        │ Turn Right (R)   │
-└───────┬──────────┘        └─────────┬─────────┘        └──────────┬─────────┘        └──────────┬───────┘
-        │                               │                               │                               │
-        ▼                               ▼                               ▼                               ▼
-┌──────────────────┐       ┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
-│ Execute Motor     │       │ Execute Motor    │        │ Execute Motor    │        │ Execute Motor    │
-│ Directions        │       │ Directions       │        │ Directions       │        │ Directions       │
-└───────────────────┘       └──────────────────┘        └──────────────────┘        └──────────────────┘
-                                            │
-                                            ▼
-                                ┌────────────────────┐
-                                │ Stop (S) Command?   │
-                                └──────────┬──────────┘
-                                           │ Yes
+                ┌──────────────────────────┼─────────────────────────┐
+                ▼                          ▼                         ▼
+        ┌───────────────┐       ┌────────────────┐        ┌────────────────┐
+        │ Forward (F)    │       │ Backward (B)   │        │ Turn Left (L) │
+        └───────┬────────┘       └──────┬────────┘        └──────┬────────┘
+                │                        │                        │
+                ▼                        ▼                        ▼
+      ┌─────────────────┐      ┌────────────────┐      ┌──────────────────┐
+      │ Execute Motor    │      │ Execute Motor   │      │ Execute Motor    │
+      │ Directions       │      │ Directions      │      │ Directions       │
+      └──────────────────┘      └─────────────────┘      └──────────────────┘
+                                           │
                                            ▼
-                                ┌────────────────────┐
-                                │ Stop All Motors     │
-                                └───────┬────────────┘
-                                        │
-                                        ▼
-                                ┌────────────────────┐
-                                │ Return to Waiting   │
-                                └────────────────────┘
-
+                               ┌────────────────────┐
+                               │ Stop (S) Command?   │
+                               └──────────┬──────────┘
+                                          │ Yes
+                                          ▼
+                               ┌────────────────────┐
+                               │ Stop All Motors     │
+                               └───────┬────────────┘
+                                       │
+                                       ▼
+                               ┌────────────────────┐
+                               │ Return to Waiting   │
+                               └────────────────────┘
 
 ---
