@@ -43,7 +43,10 @@ View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cm
 - 1x Blue LED
 - Chassis
 - Wheels  
-- Jumper Wires 
+- Jumper Wires
+
+## Component Assembly & Design Documentation
+
 
 ---
 
@@ -77,5 +80,58 @@ View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cm
 | L | Turn Left |
 | R | Turn Right |
 | S | Stop |
+
+## Flowchart
+                 ┌────────────────────────┐
+                 │      Start Program     │
+                 └────────────┬───────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │ Initialize pins & Serial │
+                └────────────┬─────────────┘
+                              │
+                              ▼
+               ┌────────────────────────────┐
+               │  Wait for Bluetooth Input  │
+               └────────────┬───────────────┘
+                              │
+               ┌─────────────┴──────────────┐
+               ▼                            ▼
+       ┌─────────────────┐         ┌───────────────────┐
+       │ Command Received │─Yes────▶ Convert to Upper  │
+       └───────┬─────────┘         └─────────┬─────────┘
+               │                              │
+              No                              ▼
+               │                 ┌────────────────────────────┐
+               └────Loop────────▶ Match Command to Movement   │
+                                 └─────────┬──────────────────┘
+                                           │
+                ┌──────────────────────────┼─────────────────────────┐
+                ▼                          ▼                         ▼
+        ┌───────────────┐       ┌────────────────┐        ┌────────────────┐
+        │ Forward (F)    │       │ Backward (B)   │        │ Turn Left (L) │
+        └───────┬────────┘       └──────┬────────┘        └──────┬────────┘
+                │                        │                        │
+                ▼                        ▼                        ▼
+      ┌─────────────────┐      ┌────────────────┐      ┌──────────────────┐
+      │ Execute Motor    │      │ Execute Motor   │      │ Execute Motor    │
+      │ Directions       │      │ Directions      │      │ Directions       │
+      └──────────────────┘      └─────────────────┘      └──────────────────┘
+                                           │
+                                           ▼
+                               ┌────────────────────┐
+                               │ Stop (S) Command?   │
+                               └──────────┬──────────┘
+                                          │ Yes
+                                          ▼
+                               ┌────────────────────┐
+                               │ Stop All Motors     │
+                               └───────┬────────────┘
+                                       │
+                                       ▼
+                               ┌────────────────────┐
+                               │ Return to Waiting   │
+                               └────────────────────┘
 
 ---
