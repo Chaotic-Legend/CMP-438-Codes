@@ -1,4 +1,4 @@
-# CMP 438 Project - Bluetooth-Controlled Car
+# CMP 438 Project - Bluetooth-Controlled Car Report
 
 - Students: Isaac D. Hoyos & Roberto Morales
 - Course: CMP 438 – Communicating Robots
@@ -66,24 +66,24 @@ The design diagrams and schematics included in the repository illustrate the ent
 ### L298N Motor Driver
 | L298N Pin | Arduino Pin | Description |
 |-----------|-------------|-------------|
-| IN1 | 8 | Controls right motor forward. |
-| IN2 | 9 | Controls right motor backward. |
-| IN3 | 10 | Controls left motor forward. |
-| IN4 | 11 | Controls left motor backward. |
-| ENA | 5 | PWM speed control for right motor. |
-| ENB | 6 | PWM speed control for left motor. |
-| GND | GND | Connect to shared ground. |
+| IN1 | 8 | This pin sends a high or low signal to control the right motor in the forward direction. |
+| IN2 | 9 | This pin sends a high or low signal to control the right motor in the backward direction. |
+| IN3 | 10 | This pin sends a high or low signal to control the left motor in the forward direction. |
+| IN4 | 11 | This pin sends a high or low signal to control the left motor in the backward direction. |
+| ENA | 5 | This pin receives a PWM signal to control the speed of the right motor. |
+| ENB | 6 | This pin receives a PWM signal to control the speed of the left motor. |
+| GND | GND | This pin is connected to the shared ground to complete the electrical circuit. |
 
 ---
 
 ## Commands
 | Command | Action |
 |---------|--------|
-| F | Move Forward |
-| B | Move Backward |
-| L | Turn Left |
-| R | Turn Right |
-| S | Stop |
+| F or ⬆ | Move Forward |
+| B or ⬇ | Move Backward |
+| L or ⬅ | Turn Left |
+| R or ➡ | Turn Right |
+| S or No Command | Stop |
 
 ## Flowchart
 Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
@@ -140,5 +140,10 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                                ┌────────────────────┐
                                │  Return to Waiting │
                                └────────────────────┘
+
+---
+
+## Explanation of Results
+
 
 ---
