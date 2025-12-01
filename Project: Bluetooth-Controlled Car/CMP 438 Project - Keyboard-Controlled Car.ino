@@ -42,6 +42,7 @@ void setup() {
 void loop() {
   if (Serial.available()) {
     command = Serial.read();        // This command reads the input from the Serial Monitor.
+    
     char originalCommand = command; // This line stores the original command for feedback purposes.
     command = toupper(command);     // This command converts the input to uppercase for consistency.
 
@@ -72,8 +73,7 @@ void loop() {
   }
 }
 
-// ---------------- Movement Functions ----------------
-
+// Movement Functions:
 void forward() {
   digitalWrite(IN1, HIGH); // This sets the right motor to move forward.
   digitalWrite(IN2, LOW);  // This ensures the right motor does not move backward.
