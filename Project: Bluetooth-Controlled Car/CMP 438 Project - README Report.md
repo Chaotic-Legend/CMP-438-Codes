@@ -84,7 +84,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 | A or ↺ | Pivot Left |
 | C or ↻ | Pivot Right |
 | O or 💡 | Lights On |
-| S or No Command | Stop |
+| S or No Command | Stop Car |
 
 ## Flowchart
 Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
