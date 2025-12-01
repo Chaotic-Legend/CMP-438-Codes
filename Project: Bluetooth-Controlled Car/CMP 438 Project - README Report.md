@@ -83,6 +83,9 @@ The design diagrams and schematics included in the repository illustrate the ent
 | B or ⬇ | Move Backward |
 | L or ⬅ | Turn Left |
 | R or ➡ | Turn Right |
+| A or ↺ | Pivot Left |
+| C or ↻ | Pivot Right |
+| O or 💡 | Lights On |
 | S or No Command | Stop |
 
 ## Flowchart
