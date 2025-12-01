@@ -7,13 +7,11 @@
 #define IN4 11;  // This pin controls the backward direction of the left motor.
 #define IN5 13;  // This pin controls one of the LEDs or auxiliary outputs.
 #define IN6 7;   // This pin controls another LED or auxiliary output.
-
 char command;  // This variable holds the incoming Bluetooth command character.
 
 void setup() {
-  Serial.begin(9600); // This initializes Bluetooth serial communication at 9600 baud.
-
   // These commands set all motor and LED pins as outputs.
+  Serial.begin(9600); // This initializes Bluetooth serial communication at 9600 baud.
   pinMode(8, OUTPUT);  // This sets the right motor forward pin as an output.
   pinMode(9, OUTPUT);  // This sets the right motor backward pin as an output.
   pinMode(10, OUTPUT); // This sets the left motor forward pin as an output.
