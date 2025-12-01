@@ -1,7 +1,7 @@
 # CMP 438 Project - Bluetooth-Controlled Car Report
 
 - Students: Isaac D. Hoyos & Roberto Morales
-- Course: CMP 438 – Communicating Robots
+- Course: CMP 438 - Communicating Robots
 - Professor: Yanilda Peralta Ramos
 - Project Title: Bluetooth-Controlled Car
 - Date: December 2nd, 2025
@@ -60,7 +60,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 | VCC | 5V | This pin supplies power to the HC-05 module using the Arduino's regulated 5V output. |
 | GND | GND | This pin provides a common ground reference shared with the Arduino and motor driver. |
 | TXD | RX (0) | This pin sends Bluetooth data to the Arduino, allowing the robot to receive movement commands. |
-| RXD | TX (1) | This pin receives data from the Arduino's TX pin and can be used to send status messages back to the module. |
+| RXD | TX (1) | This pin receives data from the Arduino's TX pin and can be used to send messages back to the module. |
 
 ### L298N Motor Driver
 | L298N Pin | Arduino Pin | Description |
