@@ -70,8 +70,6 @@ The design diagrams and schematics included in the repository illustrate the ent
 | IN2 | 9 | This pin sends a high or low signal to control the right motor in the backward direction. |
 | IN3 | 10 | This pin sends a high or low signal to control the left motor in the forward direction. |
 | IN4 | 11 | This pin sends a high or low signal to control the left motor in the backward direction. |
-| ENA | 5 | This pin receives a PWM signal to control the speed of the right motor. |
-| ENB | 6 | This pin receives a PWM signal to control the speed of the left motor. |
 | GND | GND | This pin is connected to the shared ground to complete the electrical circuit. |
 
 ---
