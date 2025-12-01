@@ -65,14 +65,14 @@ The design diagrams and schematics included in the repository illustrate the ent
 
 ### L298N Motor Driver
 | L298N Pin | Arduino Pin | Description |
-|-----------|-------------|
-| IN1 | 8 | Controls right motor forward.|
-| IN2 | 9 |
-| IN3 | 10 |
-| IN4 | 11 |
-| ENA | 5 |
-| ENB | 6 |
-| GND | GND |
+|-----------|-------------|-------------|
+| IN1 | 8 | Controls right motor forward. |
+| IN2 | 9 | Controls right motor backward. |
+| IN3 | 10 | Controls left motor forward. |
+| IN4 | 11 | Controls left motor backward. |
+| ENA | 5 | PWM speed control for right motor. |
+| ENB | 6 | PWM speed control for left motor. |
+| GND | GND | Connect to shared ground. |
 
 ---
 
