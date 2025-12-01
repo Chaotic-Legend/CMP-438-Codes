@@ -64,9 +64,9 @@ The design diagrams and schematics included in the repository illustrate the ent
 | TX | RX (0) |
 
 ### L298N Motor Driver
-| L298N Pin | Arduino Pin |
+| L298N Pin | Arduino Pin | Description |
 |-----------|-------------|
-| IN1 | 8 |
+| IN1 | 8 | Controls right motor forward.|
 | IN2 | 9 |
 | IN3 | 10 |
 | IN4 | 11 |
@@ -117,7 +117,7 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                 ▼                          ▼                      ▼                         ▼
         ┌────────────────┐       ┌────────────────┐        ┌────────────────┐        ┌────────────────┐
         │  Forward (F)   │       │  Backward (B)  │        │ Turn Left (L)  │        │ Turn Right (R) │
-        └───────┬────────┘       └───────┬────────┘        └──────┬─────────┘        └───────┬────────┘
+        └───────┬────────┘       └───────┬────────┘        └──────┬─────────┘        └──────┬─────────┘
                 │                        │                        │                         │
                 ▼                        ▼                        ▼                         ▼
       ┌──────────────────┐      ┌─────────────────┐      ┌──────────────────┐       ┌──────────────────┐
