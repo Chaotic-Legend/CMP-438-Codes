@@ -37,15 +37,16 @@ I used TinkerCAD to create a virtual model of the system, but the online simulat
 - A complete TinkerCAD simulation is included to demonstrate an example circuit and code.
 
 ## Components Used
-- Chassis
-- Wheels  
-- Jumper Wires
 - 1x Blue LED
+- 4x Tire Wheels
+- 1x Plastic Chassis
 - 1x L298N Motor Driver
-- 1x 7.4V Li-Ion Battery 
-- 1x HC-05 Bluetooth Module 
-- 4x DC 3-6V Gearbox Motor Dual Shaft 
+- 1x 7.4V Li-Ion Battery
+- 1x HC-05 Bluetooth Module
+- 2x Male to Male Jumper Wires
+- 10x Female to Male Jumper Wires
 - 1x Inland Uno R3 MainBoard Arduino Compatible
+- 4x TT Motor With Leads, DC 3-6V Gearbox Motor Dual Shaft
 
 ## Component Assembly & Design Documentation
 The design diagrams and schematics included in the repository illustrate the entire wiring layout of the motor driver, Bluetooth module, Arduino UNO, power distribution, and motor outputs. The assembly process began with mounting the four DC gearbox motors onto the chassis, installing the wheels, attaching the L298N motor driver, and positioning the Arduino UNO on the upper level of the platform. The HC-05 module was securely connected with jumper wires and positioned correctly to enable Bluetooth communication with the Android smartphone. All grounds were interconnected across the battery pack, motor driver, and Arduino UNO to ensure a proper reference voltage. The diagrams in the repository visually demonstrate each connected component, from power routing to directional motor control wiring.
