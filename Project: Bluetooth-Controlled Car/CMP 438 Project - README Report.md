@@ -54,7 +54,6 @@ The design diagrams and schematics included in the repository illustrate the ent
 ---
 
 ## Wiring Summary
-
 ### HC-05 Bluetooth Module
 | HC-05 Pin | Arduino Pin | Description |
 |-----------|-------------| ------------|
@@ -88,6 +87,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 
 ## Flowchart
 Below is a flowchart showing how the robotic vehicle processes the code and Bluetooth commands:
+
                  ┌────────────────────────┐
                  │      Start Program     │
                  └───────────┬────────────┘
