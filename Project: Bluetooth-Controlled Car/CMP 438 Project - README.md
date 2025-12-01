@@ -105,13 +105,13 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                ┌─────────────┴──────────────┐
                ▼                            ▼
        ┌──────────────────┐         ┌───────────────────┐
-       │ Command Received │──Yes────▶ Convert to Upper │
+       │ Command Received │───Yes───▶ Convert to Upper │
        └───────┬──────────┘         └────────┬──────────┘
                │                             │
                No                            ▼
-               │                 ┌───────────────────────────┐
-               └────Loop────────▶ Match Command to Movement │
-                                 └─────────┬─────────────────┘
+               │                 ┌────────────────────────────┐
+               └───────Loop──────▶ Match Command to Movement │
+                                 └─────────┬──────────────────┘
                                            │
                 ┌──────────────────────────┼──────────────────────┼─────────────────────────┐
                 ▼                          ▼                      ▼                         ▼
@@ -122,7 +122,7 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                 ▼                        ▼                        ▼                         ▼
       ┌──────────────────┐      ┌─────────────────┐      ┌──────────────────┐       ┌──────────────────┐
       │ Execute Motor    │      │ Execute Motor   │      │ Execute Motor    │       │ Execute Motor    │
-      │ Directions       │      │ Directions      │      │ Directions       │       │ Directions       │
+      │ Direction        │      │ Direction       │      │ Direction        │       │ Direction        │
       └──────────────────┘      └─────────┬───────┘      └──────────────────┘       └──────────────────┘
                                           │
                                           ▼
