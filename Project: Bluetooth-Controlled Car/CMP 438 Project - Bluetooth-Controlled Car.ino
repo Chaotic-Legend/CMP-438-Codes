@@ -1,14 +1,13 @@
 // CMP 438: Communicating Robots - Bluetooth-Controlled Car - Isaac D. Hoyos & Roberto Morales
 
 // Motor Driver Pins:
-#define int IN1 = 8;   // This pin controls the forward direction of the right motor.
-#define int IN2 = 9;   // This pin controls the backward direction of the right motor.
-#define int IN3 = 10;  // This pin controls the forward direction of the left motor.
-#define int IN4 = 11;  // This pin controls the backward direction of the left motor.
-#define int IN5 = 13;  // This pin controls one of the LEDs or auxiliary outputs.
-#define int IN6 = 7;   // This pin controls another LED or auxiliary output.
-#define int ENA = 5;   // This pin provides PWM speed control for the right motor.
-#define int ENB = 6;   // This pin provides PWM speed control for the left motor.
+#define IN1 8;   // This pin controls the forward direction of the right motor.
+#define IN2 9;   // This pin controls the backward direction of the right motor.
+#define IN3 10;  // This pin controls the forward direction of the left motor.
+#define IN4 11;  // This pin controls the backward direction of the left motor.
+#define IN5 13;  // This pin controls one of the LEDs or auxiliary outputs.
+#define IN6 7;   // This pin controls another LED or auxiliary output.
+
 char command;  // This variable holds the incoming Bluetooth command character.
 
 void setup() {
@@ -21,25 +20,81 @@ void setup() {
   pinMode(11, OUTPUT); // This sets the left motor backward pin as an output.
   pinMode(13, OUTPUT); // This sets the first auxiliary pin or LED as an output.
   pinMode(7, OUTPUT);  // This sets the second auxiliary pin or LED as an output.
-  Serial.println("Bluetooth-Controlled Car Ready!"); // This prints a startup confirmation message to the Serial Monitor.
+  
+  // This prints a startup confirmation message to the Serial Monitor.
+  Serial.println("==============================");
+  Serial.println("Bluetooth-Controlled Car Ready!");
+  Serial.println("By Isaac Hoyos & Roberto Morales.");
+  Serial.println("==============================");
 }
 
 void loop() {
-  if (Serial.available()) {  // This checks if a Bluetooth command is available to read.
-    command = Serial.read(); // This reads the incoming Bluetooth command from the Serial Monitor.
-    Serial.print("Received: "); 
-    Serial.println(command); // This prints the received command for feedback.
+  if (Serial.available()) {           // This checks if a Bluetooth command is available to read.
+    command = Serial.read();          // This reads the incoming command from the Serial Monitor.
 
-    // These conditions execute the appropriate movement or action based on the command.
-    if (command == 'F') forward();     
-    if (command == 'B') backward();    
-    if (command == 'L') left();        
-    if (command == 'R') right();       
-    if (command == 'S') stopCar();     
-    if (command == 'A') pivotL();      
-    if (command == 'C') pivotR();      
-    if (command == 'O') lightOn();     
-    if (command == 's') lightOff();    
+    // These conditions execute the appropriate movement or action based on the command, and print detailed feedback messages.
+    if (command == 'F') {
+      forward();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Moving Forward...");
+    }
+
+    if (command == 'B') {
+      backward();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Moving Backward...");
+    }
+
+    if (command == 'L') {
+      left();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Turning Left...");
+    }
+
+    if (command == 'R') {
+      right();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Turning Right...");
+    }
+
+    if (command == 'S') {
+      stopCar();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Car Stopped.");
+    }
+
+    if (command == 'A') {
+      pivotL();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Pivoting Left...");
+    }
+
+    if (command == 'C') {
+      pivotR();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Pivoting Right...");
+    }
+
+    if (command == 'O') {
+      lightOn();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Lights On...");
+    }
+
+    if (command == 's') {
+      lightOff();
+      Serial.print("\nCommand \""); 
+      Serial.print(command); 
+      Serial.println("\" Received: Lights Off...");
+    }
   }
 }
 
@@ -49,7 +104,6 @@ void forward() {
   digitalWrite(9, LOW);   // This deactivates the right motor in the backward direction.
   digitalWrite(10, HIGH); // This activates the left motor in the forward direction.
   digitalWrite(11, LOW);  // This deactivates the left motor in the backward direction.
-  Serial.println("\nMoving Forward..."); // This prints the forward movement status.
 }
 
 void backward() {
@@ -57,7 +111,6 @@ void backward() {
   digitalWrite(9, HIGH);  // This activates the right motor in the backward direction.
   digitalWrite(10, LOW);  // This deactivates the left motor in the forward direction.
   digitalWrite(11, HIGH); // This activates the left motor in the backward direction.
-  Serial.println("\nMoving Backward..."); // This prints the backward movement status.
 }
 
 void left() {
@@ -65,7 +118,6 @@ void left() {
   digitalWrite(9, LOW);   // This stops the right motor from moving backward.
   digitalWrite(10, HIGH); // This activates the left motor to turn the car left.
   digitalWrite(11, LOW);  // This deactivates the left motor in the backward direction.
-  Serial.println("\nTurning Left..."); // This prints the left turn status.
 }
 
 void right() {
@@ -74,7 +126,6 @@ void right() {
   digitalWrite(10, LOW);  // This stops the left motor from moving forward.
   digitalWrite(11, LOW);  // This stops the left motor from moving backward.
   digitalWrite(7, HIGH);  // This activates auxiliary pin 7 for visual feedback while turning right.
-  Serial.println("\nTurning Right..."); // This prints the right turn status.
 }
 
 void pivotL() {
@@ -108,5 +159,4 @@ void stopCar() {
   digitalWrite(9, LOW);   // This stops the right motor from moving backward.
   digitalWrite(10, LOW);  // This stops the left motor from moving forward.
   digitalWrite(11, LOW);  // This stops the left motor from moving backward.
-  Serial.println("\nCar Stopped."); // This prints the stop status.
 }
