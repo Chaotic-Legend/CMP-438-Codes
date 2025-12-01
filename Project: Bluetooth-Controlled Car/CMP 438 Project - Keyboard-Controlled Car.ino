@@ -7,19 +7,21 @@ int IN3 = 10;  // This pin controls the forward movement of the left motor.
 int IN4 = 11;  // This pin controls the backward movement of the left motor.
 int ENA = 5;   // This pin controls the speed of the right motor.
 int ENB = 6;   // This pin controls the speed of the left motor.
+int LED = 13;  // This pin controls the LED to turn on and off.
 
 char command;  // This variable stores the keyboard command entered in the Serial Monitor.
 
 void setup() {
   Serial.begin(9600); // This command opens the serial communication at 9600 baud.
 
-  // These commands set all motor control pins as outputs.
+  // These commands set all motor control pins and the LED pin as outputs.
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
   pinMode(ENA, OUTPUT);
   pinMode(ENB, OUTPUT);
+  pinMode(LED, OUTPUT);
 
   // These commands set the motors to full speed.
   analogWrite(ENA, 255);
@@ -45,6 +47,14 @@ void loop() {
     
     char originalCommand = command; // This line stores the original command for feedback purposes.
     command = toupper(command);     // This command converts the input to uppercase for consistency.
+
+    // Turn the LED on for any movement and off when stopping.
+    if (command == 'F' || command == 'B' || command == 'L' || command == 'R') {
+      digitalWrite(LED, HIGH);  // Turn the LED on for when moving.
+    }
+    if (command == 'S') {
+      digitalWrite(LED, LOW);   // Turn the LED off when stopping.
+    }
 
     switch (command) {
       case 'F':
@@ -75,36 +85,36 @@ void loop() {
 
 // Movement Functions:
 void forward() {
-  digitalWrite(IN1, HIGH); // This sets the right motor to move forward.
-  digitalWrite(IN2, LOW);  // This ensures the right motor does not move backward.
-  digitalWrite(IN3, HIGH); // This sets the left motor to move forward.
-  digitalWrite(IN4, LOW);  // This ensures the left motor does not move backward.
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void backward() {
-  digitalWrite(IN1, LOW);  // This ensures the right motor does not move forward.
-  digitalWrite(IN2, HIGH); // This sets the right motor to move backward.
-  digitalWrite(IN3, LOW);  // This ensures the left motor does not move forward.
-  digitalWrite(IN4, HIGH); // This sets the left motor to move backward.
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 void left() {
-  digitalWrite(IN1, LOW);  // This stops the right motor from moving forward.
-  digitalWrite(IN2, LOW);  // This stops the right motor from moving backward.
-  digitalWrite(IN3, HIGH); // This sets the left motor to move forward to turn left.
-  digitalWrite(IN4, LOW);  // This ensures the left motor does not move backward.
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void right() {
-  digitalWrite(IN1, HIGH); // This sets the right motor to move forward to turn right.
-  digitalWrite(IN2, LOW);  // This ensures the right motor does not move backward.
-  digitalWrite(IN3, LOW);  // This stops the left motor from moving forward.
-  digitalWrite(IN4, LOW);  // This stops the left motor from moving backward.
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 void stopCar() {
-  digitalWrite(IN1, LOW); // This stops the right motor from moving forward.
-  digitalWrite(IN2, LOW); // This stops the right motor from moving backward.
-  digitalWrite(IN3, LOW); // This stops the left motor from moving forward.
-  digitalWrite(IN4, LOW); // This stops the left motor from moving backward.
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
