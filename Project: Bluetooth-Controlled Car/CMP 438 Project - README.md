@@ -22,10 +22,10 @@ I used TinkerCAD to create a virtual model of the system, but the online simulat
 ---
 
 ## Code
-View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project%3A%20Bluetooth-Controlled%20Car/CMP%20438%20Project%20-%20Bluetooth-Controlled%20Car.ino
+- View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project%3A%20Bluetooth-Controlled%20Car/CMP%20438%20Project%20-%20Bluetooth-Controlled%20Car.ino
 
 ## Simulation
-View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cmp-438-project-keyboard-controlled-car?sharecode=ouXh349QThBm-k8ye4wscJ36WKpGQb2r2AGfotNXZYA
+- View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cmp-438-project-keyboard-controlled-car?sharecode=ouXh349QThBm-k8ye4wscJ36WKpGQb2r2AGfotNXZYA
 
 ---
 
@@ -35,8 +35,6 @@ View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cm
 - Its motors are driven using an L298N motor driver module to move the wheels of the vehicle.
 - It is capable of moving forward, backward, turning left or right, and stopping on command.
 - A complete TinkerCAD simulation is included to demonstrate an example circuit and code.
-
----
 
 ## Components Used
 - Chassis
@@ -141,9 +139,9 @@ Below is a flowchart showing how the robotic vehicle processes the code and Blue
                                │  Return to Waiting │
                                └────────────────────┘
 
----
-
 ## Explanation of Results
+After assembling the entire robotic vehicle and uploading the final version of the Arduino code, the system successfully demonstrated complete Bluetooth functionality using the Arduino Car Connect App on an Android smartphone. Each directional command sent through the app was immediately reflected in the robot's movement, showing reliable real-time communication with the HC-05 module. Pressing F or tapping the upward directional arrow in the app caused the robot to move forward smoothly, while pressing B or the downward arrow correctly triggered backward motion. The turning controls were equally responsive: pressing L or the left arrow rotated the robot to the left, and pressing R or the right arrow rotated it to the right with accurate directional control. While the S command directly stops the motors, the robotic car also automatically halts when no directional commands are sent from the smartphone.
 
+The Arduino Car Connect App included buttons for rotating the robotic car clockwise and counterclockwise in its current position, and the app had an option to remotely turn the blue LED on or off using the on-screen Bluetooth command. These additional features provide safe, predictable, and intuitive control through the app's on-screen directional commands, showcasing the robot's ability to receive and execute various Bluetooth-controlled functions beyond just motor movement. The L298N motor driver delivered stable power to the four DC gear motors, allowing the robot to navigate across the testing surface without stalling or drifting. The Bluetooth signal remained stable within a range of several meters, demonstrating consistent communication between the Android smartphone and the robot's onboard electronics. Roberto recorded a final demonstration video showing the car moving in all directions on command to guarantee that the wiring, code, motor driver, Bluetooth module, and Android control interface were all functioning together as designed.
 
 ---
