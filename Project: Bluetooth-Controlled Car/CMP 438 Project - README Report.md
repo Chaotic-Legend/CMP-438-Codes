@@ -59,7 +59,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 |-----------|-------------| ------------|
 | VCC | 5V | This pin supplies power to the HC-05 module using the Arduino's regulated 5V output. |
 | GND | GND | This pin provides a common ground reference shared with the Arduino and motor driver. |
-| TXD | RX (0) | This pin transmits Bluetooth data to the Arduino, allowing the robot to receive movement commands. |
+| TXD | RX (0) | This pin sends Bluetooth data to the Arduino, enabling the robot to receive movement commands. |
 | RXD | TX (1) | This pin receives data from the Arduino's TX pin and can send status messages back to the module. |
 
 ### L298N Motor Driver
