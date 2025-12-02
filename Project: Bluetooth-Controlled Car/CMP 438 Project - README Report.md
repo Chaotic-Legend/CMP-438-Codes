@@ -82,7 +82,7 @@ The design diagrams and schematics included in the repository illustrate the ent
 | R or ➡ | Turn Right |
 | A or ↺ | Pivot Left |
 | C or ↻ | Pivot Right |
-| O or 💡 | Lights On |
+| O or 💡 | Lights On/Off |
 | S or No Command | Stop Car |
 
 ## Flowchart
