@@ -1,4 +1,4 @@
-# CMP 438 Project - Bluetooth-Controlled Car Report
+# CMP 438 Project - Bluetooth-Controlled Car README
 
 - Students: Isaac D. Hoyos & Roberto Morales
 - Course: CMP 438 - Communicating Robots
