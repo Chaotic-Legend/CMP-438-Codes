@@ -108,21 +108,21 @@ void pickAndPlace(float x1, float y1, float z1,
                   float x2, float y2, float z2) {
 
   Serial.println("\nMoving to Pick Location...");
-  // Lower shoulder by reducing z slightly for pick-up
+  // Lower shoulder slightly for pick-up
   moveTo(x1, y1, z1 - 2.0, false);
 
   Serial.println("\nClosing Gripper...");
   gripperServo.write(GRIPPER_CLOSE);
   delay(1000);
 
-  Serial.println("\nMoving to Place Location (slower)...");
+  Serial.println("\nMoving to Place Location...");
   moveTo(x2, y2, z2, true);  // Slow movement while carrying object
 
   Serial.println("\nOpening Gripper...");
   gripperServo.write(GRIPPER_OPEN);
   delay(1000);
 
-  Serial.println("\nReturning to Home...");
-  moveTo(6.0, 0.0, 10.0, false);
+  Serial.println("\nReturning to Home Position...");
+  moveTo(6.0, 0.0, 10.0, true);  // Slow movement back to home position
   delay(1000);
 }
