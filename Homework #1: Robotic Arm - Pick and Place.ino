@@ -50,7 +50,6 @@ void loop() {
 
 // ===== Move Arm to Target (x, y, z) =====
 void moveTo(float x, float y, float z, bool slow=false) {
-
   // Base rotation angle
   float thetaBase = atan2(y, x);
   float baseDeg = constrain(degrees(thetaBase), 0, 180);
@@ -73,9 +72,9 @@ void moveTo(float x, float y, float z, bool slow=false) {
   // Wrist keeps end-effector level
   float wristDeg = constrain(90 - (shoulderDeg + elbowDeg), 0, 180);
 
-  // If slow movement is requested, interpolate
+  // Slow motion: interpolate all joints
   if (slow) {
-    const int steps = 20;
+    const int steps = 25;  // More steps = slower and smoother
     float startBase = baseServo.read();
     float startShoulder = shoulderServo.read();
     float startElbow = elbowServo.read();
@@ -86,7 +85,7 @@ void moveTo(float x, float y, float z, bool slow=false) {
       shoulderServo.write(startShoulder + (shoulderDeg - startShoulder) * i / steps);
       elbowServo.write(startElbow + (elbowDeg - startElbow) * i / steps);
       wristPitchServo.write(startWrist + (wristDeg - startWrist) * i / steps);
-      delay(80);  // Adjust delay for slower/faster movement
+      delay(60); // Adjust delay to control speed
     }
   } else {
     shoulderServo.write(shoulderDeg);
@@ -108,8 +107,7 @@ void pickAndPlace(float x1, float y1, float z1,
                   float x2, float y2, float z2) {
 
   Serial.println("\nMoving to Pick Location...");
-  // Lower shoulder slightly for pick-up
-  moveTo(x1, y1, z1 - 2.0, false);
+  moveTo(x1, y1, z1 - 2.0, true);  // Lower shoulder and slow
 
   Serial.println("\nClosing Gripper...");
   gripperServo.write(GRIPPER_CLOSE);
@@ -122,7 +120,7 @@ void pickAndPlace(float x1, float y1, float z1,
   gripperServo.write(GRIPPER_OPEN);
   delay(1000);
 
-  Serial.println("\nReturning to Home Position...");
-  moveTo(6.0, 0.0, 10.0, true);  // Slow movement back to home position
+  Serial.println("\nReturning to Home Location...");
+  moveTo(6.0, 0.0, 10.0, true);  // Smooth Return
   delay(1000);
 }
