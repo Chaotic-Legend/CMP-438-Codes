@@ -1,5 +1,5 @@
 # CMP 438: Communicating Robots - Isaac D. Hoyos
-# Lab 1 - Arduino UNO: https://wokwi.com/projects/450055789620555777
+# Lab 1 - Raspberry Pi Pico: https://wokwi.com/projects/450055821058964481
 
 import time
 from machine import Pin
