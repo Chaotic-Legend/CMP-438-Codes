@@ -1,4 +1,6 @@
 # CMP 438: Communicating Robots - Isaac D. Hoyos
+# Lab 1 - LED PWM: https://wokwi.com/projects/450055821058964481
+
 import time
 from machine import Pin
 
