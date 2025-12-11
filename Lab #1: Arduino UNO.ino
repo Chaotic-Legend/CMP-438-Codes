@@ -1,5 +1,5 @@
 // CMP 438: Communicating Robots - Isaac D. Hoyos
-// Lab 1 - Raspberry Pi Pico: https://wokwi.com/projects/450055821058964481
+// Lab 1 - Arduino UNO: https://wokwi.com/projects/450055789620555777
 
 int ledPin = 12;    // The LED is connected to digital pin 12.
 int pushButton = 2; // The push button is connected to digital pin 2.
