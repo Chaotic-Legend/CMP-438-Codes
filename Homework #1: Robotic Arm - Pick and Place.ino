@@ -1,3 +1,5 @@
+// CMP 438: Communicating Robots - Isaac D. Hoyos
+
 #include <Servo.h>
 #include <math.h>
 
