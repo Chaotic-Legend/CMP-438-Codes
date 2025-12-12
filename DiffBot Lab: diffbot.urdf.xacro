@@ -2,10 +2,10 @@
 <!-- CMP 438: Communicating Robots - Isaac D. Hoyos -->
 <robot name="diffbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- PARAMETERS -->
-  <xacro:property name="wheel_radius" value="0.05"/>
-  <xacro:property name="wheel_width" value="0.05"/>
-  <xacro:property name="wheel_sep" value="0.30"/>
+  <!-- ================= PARAMETERS ================= -->
+  <xacro:property name="wheel_radius" value="0.075"/>
+  <xacro:property name="wheel_width" value="0.075"/>
+  <xacro:property name="wheel_sep" value="0.45"/>
 
   <!-- Derived parameters -->
   <xacro:property name="half_wheel_sep" value="${wheel_sep * 0.5}"/>
@@ -14,23 +14,24 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.4 0.3 0.1"/>
+        <!-- Bigger body -->
+        <box size="0.6 0.45 0.15"/>
       </geometry>
-      <material name="gray">
-        <color rgba="0.6 0.6 0.6 1"/>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
       </material>
     </visual>
 
     <collision>
       <geometry>
-        <box size="0.4 0.3 0.1"/>
+        <box size="0.6 0.45 0.15"/>
       </geometry>
     </collision>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="8.0"/>
       <inertia
-        ixx="0.1" iyy="0.1" izz="0.1"
+        ixx="0.2" iyy="0.2" izz="0.2"
         ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
@@ -41,8 +42,8 @@
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
       </geometry>
-      <material name="black">
-        <color rgba="0 0 0 1"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
       </material>
     </visual>
 
@@ -53,9 +54,9 @@
     </collision>
 
     <inertial>
-      <mass value="1.0"/>
+      <mass value="1.5"/>
       <inertia
-        ixx="0.01" iyy="0.01" izz="0.01"
+        ixx="0.02" iyy="0.02" izz="0.02"
         ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
@@ -66,8 +67,8 @@
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
       </geometry>
-      <material name="black">
-        <color rgba="0 0 0 1"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
       </material>
     </visual>
 
@@ -78,9 +79,9 @@
     </collision>
 
     <inertial>
-      <mass value="1.0"/>
+      <mass value="1.5"/>
       <inertia
-        ixx="0.01" iyy="0.01" izz="0.01"
+        ixx="0.02" iyy="0.02" izz="0.02"
         ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
@@ -89,7 +90,7 @@
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <origin xyz="0 ${half_wheel_sep} -0.05" rpy="0 1.5707 0"/>
+    <origin xyz="0 ${half_wheel_sep} -0.075" rpy="0 1.5707 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
@@ -97,7 +98,7 @@
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <origin xyz="0 -${half_wheel_sep} -0.05" rpy="0 1.5707 0"/>
+    <origin xyz="0 -${half_wheel_sep} -0.075" rpy="0 1.5707 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
