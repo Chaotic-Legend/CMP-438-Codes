@@ -7,14 +7,14 @@
   <xacro:property name="wheel_width" value="0.075"/>
   <xacro:property name="wheel_sep" value="0.45"/>
 
-  <!-- Derived parameters -->
+  <!-- Derived Parameters -->
   <xacro:property name="half_wheel_sep" value="${wheel_sep * 0.5}"/>
 
   <!-- ================= BASE ================= -->
   <link name="base_link">
     <visual>
       <geometry>
-        <!-- Bigger body -->
+        <!-- Bigger Body -->
         <box size="0.6 0.45 0.15"/>
       </geometry>
       <material name="green">
