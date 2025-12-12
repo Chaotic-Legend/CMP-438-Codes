@@ -8,13 +8,18 @@
   <xacro:property name="wheel_width" value="0.05"/>
   <xacro:property name="wheel_sep" value="0.30"/>
 
-  <!-- BASE -->
+  <!-- Derived parameters -->
+  <xacro:property name="half_wheel_sep" value="${wheel_sep * 0.5}"/>
+
+  <!-- ================= BASE ================= -->
   <link name="base_link">
     <visual>
       <geometry>
         <box size="0.4 0.3 0.1"/>
       </geometry>
-      <material><color rgba="0.6 0.6 0.6 1"/></material>
+      <material name="gray">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </visual>
 
     <collision>
@@ -25,17 +30,21 @@
 
     <inertial>
       <mass value="5.0"/>
-      <inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0"/>
+      <inertia
+        ixx="0.1" iyy="0.1" izz="0.1"
+        ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
 
-  <!-- LEFT WHEEL -->
+  <!-- ================= LEFT WHEEL ================= -->
   <link name="left_wheel">
     <visual>
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
       </geometry>
-      <material><color rgba="0 0 0 1"/></material>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
     </visual>
 
     <collision>
@@ -46,17 +55,21 @@
 
     <inertial>
       <mass value="1.0"/>
-      <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/>
+      <inertia
+        ixx="0.01" iyy="0.01" izz="0.01"
+        ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
 
-  <!-- RIGHT WHEEL -->
+  <!-- ================= RIGHT WHEEL ================= -->
   <link name="right_wheel">
     <visual>
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
       </geometry>
-      <material><color rgba="0 0 0 1"/></material>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
     </visual>
 
     <collision>
@@ -67,27 +80,29 @@
 
     <inertial>
       <mass value="1.0"/>
-      <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/>
+      <inertia
+        ixx="0.01" iyy="0.01" izz="0.01"
+        ixy="0.0" ixz="0.0" iyz="0.0"/>
     </inertial>
   </link>
 
-  <!-- LEFT JOINT -->
+  <!-- ================= LEFT JOINT ================= -->
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <origin xyz="0 ${wheel_sep/2} -0.05" rpy="0 1.5707 0"/>
+    <origin xyz="0 ${half_wheel_sep} -0.05" rpy="0 1.5707 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
-  <!-- RIGHT JOINT -->
+  <!-- ================= RIGHT JOINT ================= -->
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <origin xyz="0 -${wheel_sep/2} -0.05" rpy="0 1.5707 0"/>
+    <origin xyz="0 -${half_wheel_sep} -0.05" rpy="0 1.5707 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
-  <!-- GAZEBO -->
+  <!-- ================= GAZEBO DIFF DRIVE ================= -->
   <gazebo>
     <plugin
       filename="libros_gz_sim_diff_drive_system.so"
