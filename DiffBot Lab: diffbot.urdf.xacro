@@ -1,6 +1,6 @@
-<!-- CMP 438: Communicating Robots - Isaac D. Hoyos -->
-
 <?xml version="1.0"?>
+
+<!-- CMP 438: Communicating Robots - Isaac D. Hoyos -->
 <robot name="diffbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- PARAMETERS -->
