@@ -6,15 +6,12 @@
   <xacro:property name="wheel_radius" value="0.075"/>
   <xacro:property name="wheel_width" value="0.075"/>
   <xacro:property name="wheel_sep" value="0.45"/>
-
-  <!-- Derived Parameters -->
   <xacro:property name="half_wheel_sep" value="${wheel_sep * 0.5}"/>
 
   <!-- ================= BASE ================= -->
   <link name="base_link">
     <visual>
       <geometry>
-        <!-- Bigger Body -->
         <box size="0.6 0.45 0.15"/>
       </geometry>
       <material name="green">
@@ -105,8 +102,8 @@
   <!-- ================= GAZEBO DIFF DRIVE ================= -->
   <gazebo>
     <plugin
-      filename="libros_gz_sim_diff_drive_system.so"
-      name="ros_diff_drive">
+      filename="/opt/ros/kilted/lib/libros_gz_sim_diff_drive_system.so"
+      name="ros_gz_diff_drive">
 
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
@@ -118,6 +115,9 @@
       <odom_topic>odom</odom_topic>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_link</robot_base_frame>
+
+      <publish_odom>true</publish_odom>
+      <publish_tf>true</publish_tf>
 
     </plugin>
   </gazebo>
