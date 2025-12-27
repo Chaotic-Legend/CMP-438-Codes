@@ -11,7 +11,7 @@ This project presents a fully operational Bluetooth-controlled robotic car desig
 
 The primary objective of this project is to build a functioning, small-scale robotic vehicle that demonstrates wireless communication, embedded programming, and coordinated motor control. The system shows how a microcontroller interprets Bluetooth commands and converts them into physical motion through the motor driver and hardware circuitry. Additional goals include implementing reliable wiring, developing clean and maintainable code, and verifying performance through simulation and real-world testing. Overall, the project highlights the complete process of designing, programming, assembling, and evaluating a Bluetooth-controlled robotic system.
 
-All development tasks, including writing the Arduino code, creating the TinkerCAD simulation, preparing the GitHub repository, designing the diagrams and schematics, and writing the full project report, were completed by Isaac D. Hoyos. Roberto Morales was responsible for acquiring all hardware components, assembling the physical robotic car, wiring all components on the chassis, testing the uploaded Arduino code on the real robot, and capturing photos and a demonstration video of the final results. I used TinkerCAD to create a virtual model of the system, but the online simulator had limitations that prevented me from accurately simulating the real robotic vehicle. It does not support the HC-05 Bluetooth module, cannot simulate Bluetooth communication with an Android phone, and does not allow me to use more than two hobby gearmotors. For this reason, the TinkerCAD version uses keyboard input to demonstrate the concept, while the physical robot uses genuine Bluetooth communication with the necessary components.
+All development tasks, including writing the Arduino code, creating the Tinkercad simulation, preparing the GitHub repository, designing the diagrams and schematics, and writing the full project report, were completed by Isaac D. Hoyos. Roberto Morales was responsible for acquiring all hardware components, assembling the physical robotic car, wiring all components on the chassis, testing the uploaded Arduino code on the real robot, and capturing photos and a demonstration video of the final results. I used Tinkercad to create a virtual model of the system, but the online simulator had limitations that prevented me from accurately simulating the real robotic vehicle. It does not support the HC-05 Bluetooth module, cannot simulate Bluetooth communication with an Android phone, and does not allow me to use more than two hobby gearmotors. For this reason, the Tinkercad version uses keyboard input to demonstrate the concept, while the physical robot uses genuine Bluetooth communication with the necessary components.
 
 - This directory folder contains the full Arduino source code for the project.
 - It includes all wiring diagrams required to assemble the circuit.
@@ -25,7 +25,7 @@ All development tasks, including writing the Arduino code, creating the TinkerCA
 - View the full Arduino code here: https://github.com/Chaotic-Legend/CMP-438-Codes/blob/main/Project%3A%20Bluetooth-Controlled%20Car/CMP%20438%20Project%20-%20Bluetooth-Controlled%20Car.ino
 
 ## Simulation
-- View the TinkerCAD circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cmp-438-project-keyboard-controlled-car?sharecode=ouXh349QThBm-k8ye4wscJ36WKpGQb2r2AGfotNXZYA
+- View the Tinkercad circuit here: https://www.tinkercad.com/things/igILUXtGBrG-cmp-438-project-keyboard-controlled-car?sharecode=ouXh349QThBm-k8ye4wscJ36WKpGQb2r2AGfotNXZYA
 
 ---
 
@@ -34,7 +34,7 @@ All development tasks, including writing the Arduino code, creating the TinkerCA
 - The system is fully compatible with Android Bluetooth controller apps, such as the Arduino Car Connect App.
 - Its motors are driven using an L298N motor driver module to move the wheels of the vehicle.
 - It is capable of moving forward, backward, turning left or right, and stopping on command.
-- A complete TinkerCAD simulation is included to demonstrate an example circuit and code.
+- A complete Tinkercad simulation is included to demonstrate an example circuit and code.
 
 ## Components Used
 - 1x Blue LED
