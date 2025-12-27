@@ -1,5 +1,5 @@
 // CMP 438: Communicating Robots - Isaac D. Hoyos
-// Tinkercad Link: https://www.tinkercad.com/things/llOadpVHkvQ-cmp-438-lab-7-ultrasonic-obstacle-detection?sharecode=TkVoYADwGYIJzt_LFiqKktdId7yBzI1se8BY35hrR4I
+// Tinkercad Link: https://tinyurl.com/3h2w897m
 
 // These pins control the L293D motor driver for the right and left motors.
 int IN1 = 8;  // This pin controls the right motor moving forward.
