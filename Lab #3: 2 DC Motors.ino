@@ -1,4 +1,5 @@
 // CMP 438: Communicating Robots - Isaac D. Hoyos
+// Tinkercad Link: https://tinyurl.com/5y2kns7j
 
 // === Define Motor Control Pins ===
 const int motorLeftPinForward = 4;   // IN3 on L293D
@@ -28,21 +29,15 @@ void loop() {
   // === Movement Sequence ===
   moveForward();
   delay(2000);
-  
   turnLeft();
   delay(1500);
-
   moveForward();
   delay(2000);
-
   turnRight();
   delay(1500);
-
   stopMotors();
   delay(2000);
 }
-
-// -------------------- Motor Functions --------------------
 
 // === Individual Motor Controls ===
 void motorLeftMoveForward() {
@@ -89,6 +84,7 @@ void pivotTurn() {
   motorRightMoveBackward();
 }
 void stopMotors() {
+  // 
   digitalWrite(motorLeftPinForward, LOW);
   digitalWrite(motorLeftPinBackward, LOW);
   digitalWrite(motorRightPinForward, LOW);
