@@ -95,7 +95,7 @@ void pivotTurn() {
   motorRightMoveBackward();
 }
 
-// This function stops all motor movement.
+// This function stops all motor movement of the robot.
 void stopMotors() {
   digitalWrite(motorLeftPinForward, LOW);
   digitalWrite(motorLeftPinBackward, LOW);
