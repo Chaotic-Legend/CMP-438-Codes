@@ -1,4 +1,5 @@
 // CMP 438: Communicating Robots - Isaac D. Hoyos
+// Tinkercad Link: https://tinyurl.com/yc72kyn8
 
 #include <Adafruit_NeoPixel.h>
 #define PIN 12
@@ -9,6 +10,7 @@ int delayVal = 100;
 int redColor = 0;
 int greenColor = 0;
 int blueColor = 0;
+
 void setup() {
   pixels.begin();
   pixels.show();
