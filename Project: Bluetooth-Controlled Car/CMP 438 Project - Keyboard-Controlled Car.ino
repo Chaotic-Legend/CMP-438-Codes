@@ -1,6 +1,7 @@
 // CMP 438: Communicating Robots - Keyboard-Controlled Car - Isaac D. Hoyos & Roberto Morales
+// Tinkercad Link: https://tinyurl.com/jfs9kbf7
 
-// Motor Driver Pins:
+// These pins are used to connect the motor driver to the Arduino.
 int IN1 = 8;  // This pin controls the forward movement of the right motor by sending a HIGH signal.
 int IN2 = 9;  // This pin controls the backward movement of the right motor by sending a HIGH signal.
 int IN3 = 10; // This pin controls the forward movement of the left motor by sending a HIGH signal.
@@ -11,7 +12,7 @@ int LED = 13; // This pin controls the LED that provides visual feedback during 
 char command; // This variable stores the keyboard command entered into the Serial Monitor.
 
 void setup() {
-  // These commands configure all motor and LED pins as outputs so they can send control signals.
+  // These commands configure all motor and LED pins as outputs to send control signals.
   Serial.begin(9600);   // This initializes serial communication at a baud rate of 9600.
   pinMode(IN1, OUTPUT); // This sets the right motor forward-control pin as an output.
   pinMode(IN2, OUTPUT); // This sets the right motor backward-control pin as an output.
@@ -60,34 +61,29 @@ void loop() {
         forward(); // This calls the function that drives both motors forward.
         Serial.print("\nCommand \""); Serial.print(originalCommand); Serial.println("\" Received: Moving Forward...");
         break;
-
       case 'B':     // This case activates backward motion.
         backward(); // This calls the function that drives both motors backward.
         Serial.print("\nCommand \""); Serial.print(originalCommand); Serial.println("\" Received: Moving Backward...");
         break;
-
       case 'L': // This case activates a left turn.
         left(); // This calls the function that turns the robot left.
         Serial.print("\nCommand \""); Serial.print(originalCommand); Serial.println("\" Received: Turning Left...");
         break;
-
       case 'R':  // This case activates a right turn.
         right(); // This calls the function that turns the robot right.
         Serial.print("\nCommand \""); Serial.print(originalCommand); Serial.println("\" Received: Turning Right...");
         break;
-
       case 'S':    // This case stops all motor movement.
         stopCar(); // This calls the function that shuts off all motor outputs.
         Serial.print("\nCommand \""); Serial.print(originalCommand); Serial.println("\" Received: Car Stopped.");
         break;
-
       default: // This case handles any invalid or unknown command.
         Serial.print("\nUnknown Command \""); Serial.print(originalCommand); Serial.println("\". Please use F, B, L, R, or S.");
     }
   }
 }
 
-// Movement Functions:
+// These functions control the movement of the motors.
 void forward() {
   digitalWrite(IN1, HIGH); // This activates the right motor in the forward direction.
   digitalWrite(IN2, LOW);  // This ensures the right motor does not run backward during forward motion.
