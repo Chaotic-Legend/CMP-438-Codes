@@ -32,7 +32,7 @@ void setup() {
   elbowServo.attach(5);
   wristPitchServo.attach(3);
   gripperServo.attach(11);
-  Serial.println("=== Adeept 5-Servo Robotic Arm: Pick & Place ===");
+  Serial.println("=== Adeept 5-Servo Robotic Arm: Pick & Place Sequence ===");
 
   // This section moves the robotic arm to a safe startup position.
   baseServo.write(90);
@@ -46,7 +46,7 @@ void setup() {
 // This loop continuously performs the pick-and-place sequence.
 void loop() {
   pickAndPlace(x_pick, y_pick, z_pick, x_place, y_place, z_place);
-  Serial.println("\nPick and Place Complete. Waiting...");
+  Serial.println("\nPick and Place Sequence Complete! Waiting before repeating...");
   delay(3000);
 }
 
@@ -105,16 +105,16 @@ void moveTo(float x, float y, float z, bool slow=false) {
 void pickAndPlace(float x1, float y1, float z1,
                   float x2, float y2, float z2) {
   Serial.println("\nMoving to Pick Location...");
-  moveTo(x1, y1, z1 - 2.0, true); // This movement lowers the arm slowly to the pick position.
+  moveTo(x1, y1, z1 - 2.0, true); // This movement lowers the arm slowly to the pick location.
   Serial.println("\nClosing Gripper...");
   gripperServo.write(GRIPPER_CLOSE);
   delay(1000);
   Serial.println("\nMoving to Place Location...");
-  moveTo(x2, y2, z2, true); // This movement carries the object slowly to the place location.
+  moveTo(x2, y2, z2, true); // This movement carries the object slowly to the specified location.
   Serial.println("\nOpening Gripper...");
   gripperServo.write(GRIPPER_OPEN);
   delay(1000);
   Serial.println("\nReturning to Home Location...");
-  moveTo(6.0, 0.0, 10.0, true); // This movement smoothly returns the arm to a home position.
+  moveTo(6.0, 0.0, 10.0, true); // This movement smoothly returns the arm to the home location.
   delay(1000);
 }
